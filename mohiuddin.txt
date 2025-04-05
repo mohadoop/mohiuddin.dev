@@ -5,9 +5,9 @@ Thank you for visiting my site.
 Hi, I'm mohiuddin.<!-- laglaglaglaglaglaglaglaglag -->
 
 About me !! 
-<p>At daytime, I work as a Big Data Architect. With over 15 years of experience in Information Technology; I am very fortunate to have worked with several fortune 100 companies. </p>
+<p>At daytime, I work as a Big Data Architect. With over 15 years of experience in Data and Technology; I am very fortunate to have worked with several fortune 100 companies at a proffesional scale. </p>
 
-<p>My academic journey began at the prestigious Karolinska Institute in Stockholm, Sweden, where I earned a degree in Public Health Information Systems with a focus on Quantitative Data Analysis. Currently, I completed a Master’s degree in Computer Science with a specialization in Cloud Computing Architecture at the University of Maryland </p>
+<p>My academic journey began at the prestigious Karolinska Institute in Stockholm, Sweden, where I earned a degree in Public Health Information Systems with a focus on Quantitative Data Analysis. I completed my Master’s degree in Computer Science with a specialization in Cloud Computing Architecture at the University of Maryland </p>
 
 <p>My passion for technology ignited at the age of 16, when I managed to convince my parents to let me buy my first computer using my savings. That moment marked the beginning of an exciting journey in tech, one that continues to inspire me every day.</p>
 
