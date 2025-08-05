@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>American Muslim Connect - AI-Powered Community Events</title>
+    <style>
+        /* --- Global Styles & Fonts --- */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        :root {
+            --primary-color: #0d47a1; /* Deep Blue */
+            --secondary-color: #2e7d32; /* Calming Green */
+            --accent-color: #f9a825; /* Warm Yellow */
+            --text-color: #333;
+            --light-gray: #f4f4f4;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* --- Layout Containers --- */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section {
+            text-align: center;
+        }
+
+        .section-light {
+            background-color: var(--light-gray);
+        }
+
+        /* --- Header & Navigation --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: var(--white);
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .navbar-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(13, 71, 161, 0.8), rgba(13, 71, 161, 0.8)), url('https://images.unsplash.com/photo-1585627763785-5559ab5f385c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bW9zcXVlfHx8fHx8MTY5OTI2ODIzNQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080') no-repeat center center;
+            background-size: cover;
+            color: var(--white);
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 650px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* --- Signup Form --- */
+        .signup-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        
+        @media (min-width: 768px) {
+            .signup-form {
+                flex-direction: row;
+            }
+        }
+
+        .signup-form .form-group {
+            flex-grow: 1;
+            width: 100%;
+        }
+
+        .signup-form input, .signup-form select {
+            width: 100%;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        
+        .signup-form select {
+             -webkit-appearance: none;
+             -moz-appearance: none;
+             appearance: none;
+             background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+             background-repeat: no-repeat;
+             background-position: right 1rem center;
+             background-size: 1em;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            width: 100%;
+        }
+        
+        @media (min-width: 768px) {
+            .btn-primary {
+                width: auto;
+            }
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .btn-primary:hover {
+            background-color: #388e3c; /* Darker Green */
+        }
+        
+        #success-message {
+            margin-top: 15px;
+            color: var(--accent-color);
+            font-weight: 600;
+            display: none;
+        }
+
+        /* --- How It Works Section --- */
+        .how-it-works .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        @media (min-width: 768px) {
+            .how-it-works .steps {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+
+        .step {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .step .icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 0;
+            opacity: 0.9;
+        }
+        
+        .footer .tagline {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 8px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="#" class="navbar-brand">American Muslim Connect</a>
+        <nav class="navbar-links">
+            <a href="#how-it-works">How It Works</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero section">
+            <h1>Your Community Events, Intelligently Curated by AI</h1>
+            <p>Stop searching multiple websites. Our cutting-edge AI technology discovers local Islamic events and news for you, delivering a personalized digest straight to your inbox. All to better serve and connect our community.</p>
+            
+            <form id="subscribe-form" class="signup-form">
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                </div>
+                 <div class="form-group">
+                    <select id="state" name="state" required>
+                        <option value="" disabled selected>Select your state</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NY">New York</option>
+                        <option value="CA">California</option>
+                        <option value="TX">Texas</option>
+                        <option value="IL">Illinois</option>
+                        <option value="MI">Michigan</option>
+                        <option value="VA">Virginia</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Subscribe Free</button>
+            </form>
+            <p id="success-message">🎉 Thank you! Check your inbox to confirm your subscription.</p>
+        </section>
+
+        <section id="how-it-works" class="section container">
+            <h2>Your Community, Delivered Weekly</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="icon">📍</div>
+                    <h3>1. Personalize</h3>
+                    <p>Tell us your city and state. We tailor the news specifically for you.</p>
+                </div>
+                <div class="step">
+                    <div class="icon">🤖</div>
+                    <h3>2. AI-Powered Curation</h3>
+                    <p>Our advanced AI engine actively discovers and categorizes events from hundreds of sources, ensuring you receive the most relevant updates.</p>
+                </div>
+                <div class="step">
+                    <div class="icon">💌</div>
+                    <h3>3. You Connect</h3>
+                    <p>Receive one simple email each week with everything you need to know to engage with your community.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-light">
+             <div class="container">
+                <h2>Experience the Future of Community Connection</h2>
+                <p style="max-width: 600px; margin: 0 auto 30px auto;">Let our cutting-edge AI do the work. Sign up now to receive your free, intelligently curated community newsletter.</p>
+                 <form id="subscribe-form-2" class="signup-form">
+                    <div class="form-group">
+                        <input type="email" id="email-2" name="email" placeholder="Enter your email address" required>
+                    </div>
+                     <div class="form-group">
+                        <select id="state-2" name="state" required>
+                            <option value="" disabled selected>Select your state</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NY">New York</option>
+                            <option value="CA">California</option>
+                            <option value="TX">Texas</option>
+                            <option value="IL">Illinois</option>
+                            <option value="MI">Michigan</option>
+                            <option value="VA">Virginia</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Get My Updates</button>
+                </form>
+                 <p id="success-message-2" style="display: none; margin-top: 15px; color: var(--secondary-color); font-weight: 600;">✅ Success! Welcome to the community.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="about" class="footer">
+        <p>&copy; 2025 American Muslim Connect. Fostering community, one event at a time.</p>
+        <p class="tagline">Powered by cutting-edge AI to better serve the community. | Union Township, New Jersey</p>
+    </footer>
+
+    <script>
+        // Simple JavaScript to handle form submission and show a success message
+        // In a real Webflow site, you would connect this form to Webflow's form handling,
+        // which could then trigger a Zapier/Make automation to your Email Service Provider.
+        
+        function handleFormSubmit(formId, successMessageId) {
+            const form = document.getElementById(formId);
+            const successMessage = document.getElementById(successMessageId);
+            
+            form.addEventListener('submit', function(event) {
+                // Prevent the default form submission (which reloads the page)
+                event.preventDefault();
+                
+                // You can add validation here if needed
+                const emailInput = form.querySelector('input[type="email"]');
+                if (emailInput.value) {
+                    // Hide the form fields and button for a cleaner look after submission
+                    form.style.display = 'none';
+                    
+                    // Show the success message
+                    successMessage.style.display = 'block';
+                }
+            });
+        }
+        
+        // Initialize for both forms on the page
+        handleFormSubmit('subscribe-form', 'success-message');
+        handleFormSubmit('subscribe-form-2', 'success-message-2');
+
+    </script>
+
+</body>
+</html>
